@@ -14,6 +14,8 @@ public class RandomPasswordGenerator implements PasswordMethods{
 
     private HashSet<String> pairValues = new HashSet<>();
 
+    private HashSet<String> reel = new HashSet<>();
+
     private Timer scheduler = new Timer(true);
 
     public String initialize(){
@@ -128,6 +130,7 @@ public class RandomPasswordGenerator implements PasswordMethods{
         pairValues = initialize(pairValues);
         String hashd = collectPairValues(file, pairValues);
         Random randomizer = new Random();
+
         
         return hashd;
     }
@@ -176,9 +179,12 @@ public class RandomPasswordGenerator implements PasswordMethods{
         }  
         return hashValueSet;
     }
+
     public void schedule(){
         scheduler.scheduleAtFixedRate(new Tminus(), 100, 5000);
         scheduler.cancel();
     }
+    
+    private 
     
 }
