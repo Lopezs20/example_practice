@@ -38,7 +38,10 @@ public class MinStack {
         }
     }
     public int top(){
-        return stack.get(pointerTop);
+        return get(pointerTop);
+    }
+    private int get(int pointer){
+        return this.stack.get(pointer);
     }
     public int getMin(){
         if(!stack.isEmpty()){
